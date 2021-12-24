@@ -19,12 +19,13 @@ public class JpaMain {
 
             // 영속
             Member member = em.find(Member.class, 150L);
-            em.persist(member);
+            member.setName("AAAA");
 
-            em.flush();
+            em.clear();
+
+            Member member2 = em.find(Member.class, 150L);
 
             System.out.println("==========================");
-
             tx.commit();
         } catch (Exception e) {
             tx.rollback();
