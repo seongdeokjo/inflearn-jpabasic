@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="746ded86-6e57-4f9b-8a74-f7a6256e7337" name="Changes" comment="feat: inflearn - spring jpa basic : hello jpa - 필드와 컬럼 매핑">
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/hellojpa/RoleType.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+        <option value="Enum" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectId" id="22j13gOFWCV60K4wqtAKCjtOyXf" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="1" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="showExcludedFiles" value="false" />
+    <option name="showLibraryContents" value="true" />
+    <option name="showModules" value="false" />
+    <option name="sortByType" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="hellojpa" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="JpaMain" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="hellojpa.JpaMain" />
+      <module name="ex1-hello-jpa" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="hellojpa.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.JpaMain" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="746ded86-6e57-4f9b-8a74-f7a6256e7337" name="Changes" comment="" />
+      <created>1640335989385</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1640335989385</updated>
+      <workItem from="1640336006827" duration="10745000" />
+      <workItem from="1640413248978" duration="3871000" />
+    </task>
+    <task id="LOCAL-00001" summary="feat: inflearn - spring jpa basic :">
+      <created>1640337124108</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1640337124108</updated>
+    </task>
+    <task id="LOCAL-00002" summary="feat: inflearn - spring jpa basic : hello jpa 프로젝트 생성">
+      <created>1640337939681</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1640337939681</updated>
+    </task>
+    <task id="LOCAL-00003" summary="feat: inflearn - spring jpa basic : hello jpa - 애플리케이션 개발">
+      <created>1640344243377</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1640344243377</updated>
+    </task>
+    <task id="LOCAL-00004" summary="feat: inflearn - spring jpa basic : hello jpa - 영속성 컨텍스트1">
+      <created>1640345082925</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1640345082925</updated>
+    </task>
+    <task id="LOCAL-00005" summary="feat: inflearn - spring jpa basic : hello jpa - 영속성 컨텍스트2">
+      <created>1640346906052</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1640346906052</updated>
+    </task>
+    <task id="LOCAL-00006" summary="feat: inflearn - spring jpa basic : hello jpa - 플러시">
+      <created>1640347284096</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1640347284096</updated>
+    </task>
+    <task id="LOCAL-00007" summary="feat: inflearn - spring jpa basic : hello jpa - 준영속성">
+      <created>1640347584105</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1640347584105</updated>
+    </task>
+    <task id="LOCAL-00008" summary="feat: inflearn - spring jpa basic : hello jpa - 데이터 베이스 스키마 자동 생성">
+      <created>1640416639521</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1640416639521</updated>
+    </task>
+    <task id="LOCAL-00009" summary="feat: inflearn - spring jpa basic : hello jpa - 필드와 컬럼 매핑">
+      <created>1640417764690</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1640417764690</updated>
+    </task>
+    <task id="LOCAL-00010" summary="feat: inflearn - spring jpa basic : hello jpa - 필드와 컬럼 매핑">
+      <created>1640417771748</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1640417771748</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="feat: inflearn - spring jpa basic :" />
+    <MESSAGE value="feat: inflearn - spring jpa basic : hello jpa 프로젝트 생성" />
+    <MESSAGE value="feat: inflearn - spring jpa basic : hello jpa - 애플리케이션 개발" />
+    <MESSAGE value="feat: inflearn - spring jpa basic : hello jpa - 영속성 컨텍스트1" />
+    <MESSAGE value="feat: inflearn - spring jpa basic : hello jpa - 영속성 컨텍스트2" />
+    <MESSAGE value="feat: inflearn - spring jpa basic : hello jpa - 플러시" />
+    <MESSAGE value="feat: inflearn - spring jpa basic : hello jpa - 준영속성" />
+    <MESSAGE value="feat: inflearn - spring jpa basic : hello jpa - 데이터 베이스 스키마 자동 생성" />
+    <MESSAGE value="feat: inflearn - spring jpa basic : hello jpa - 필드와 컬럼 매핑" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: inflearn - spring jpa basic : hello jpa - 필드와 컬럼 매핑" />
+  </component>
+</project>
