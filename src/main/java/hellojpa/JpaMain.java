@@ -23,7 +23,7 @@ public class JpaMain {
 
             em.clear();
 
-            Member member2 = em.find(Member.class, 150L);
+            em.find(Member.class, 150L)
 
             System.out.println("==========================");
             tx.commit();
