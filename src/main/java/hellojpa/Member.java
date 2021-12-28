@@ -30,14 +30,14 @@ public class Member{
     @Embedded
     private Address homeAddress;
 
-    // 주소
-    @Embedded
-    @AttributeOverrides({
-            @AttributeOverride(name = "city", column = @Column(name = "WORK_CITY")),
-            @AttributeOverride(name = "street", column = @Column(name = "WORK_STREET")),
-            @AttributeOverride(name = "zipcode", column = @Column(name = "WORK_ZIPCODE"))
-    })
-    private Address workAddress;
+//    // 주소
+//    @Embedded
+//    @AttributeOverrides({
+//            @AttributeOverride(name = "city", column = @Column(name = "WORK_CITY")),
+//            @AttributeOverride(name = "street", column = @Column(name = "WORK_STREET")),
+//            @AttributeOverride(name = "zipcode", column = @Column(name = "WORK_ZIPCODE"))
+//    })
+//    private Address workAddress;
 
 
 ////  @ManyToOne(fetch = FetchType.LAZY)  // 지연로딩 - 프록시 객체를 사용해 조회
