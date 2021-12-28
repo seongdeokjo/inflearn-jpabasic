@@ -1,6 +1,12 @@
 package hellojpa;
 
 import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
+
+import static javax.persistence.CascadeType.*;
 
 
 //2. seq 사용 ->
@@ -10,8 +16,8 @@ import javax.persistence.*;
 //3. table seq 사용 ->@TableGenerator(name = "MEMBER_SEQ_GENERATOR",table = "MY_SEQUENCES",pkColumnValue = "MEMBER_SEQ",allocationSize = 1)
 @Entity
 //public class Member extends BaseEntity{
-public class Member{
-//  1. @GeneratedValue(strategy = GenerationType.IDENTITY)
+public class Member {
+    //  1. @GeneratedValue(strategy = GenerationType.IDENTITY)
 //  2. @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "member_seq_generator")
 //  3. @GeneratedValue(strategy = GenerationType.TABLE,generator = "MEMBER_SEQ_GENERATOR")
     @Id
@@ -24,11 +30,25 @@ public class Member{
 
     // 기간 period
     @Embedded
-   private Period workPeriod;
+    private Period workPeriod;
 
     // 주소
     @Embedded
     private Address homeAddress;
+
+    @ElementCollection
+    @CollectionTable(name = "FAVORITE_FOOD", joinColumns = @JoinColumn(name = "MEMBER_ID"))
+    @Column(name = "FOOD_NAME")
+    private Set<String> favoriteFoods = new HashSet<>();
+
+//    @OrderColumn(name = "address_history_order")
+//    @ElementCollection
+//    @CollectionTable(name = "ADDRESS",joinColumns = @JoinColumn(name = "MEMBER_ID"))
+//    private List<Address> addressHistory = new ArrayList<>();
+
+    @OneToMany(cascade = ALL, orphanRemoval = true)
+    @JoinColumn(name = "MEMBER_ID")
+    private List<AddressEntity> addressHistory = new ArrayList<>();
 
 //    // 주소
 //    @Embedded
@@ -56,14 +76,14 @@ public class Member{
 //    @OneToMany(mappedBy = "member")
 //    private List<MemberProduct> memberProducts = new ArrayList<>();
 
-//    public Long getId() {
-//        return id;
-//    }
-//
-//    public void setId(Long id) {
-//        this.id = id;
-//    }
-//
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
     public String getUsername() {
         return username;
     }
@@ -71,7 +91,7 @@ public class Member{
     public void setUsername(String username) {
         this.username = username;
     }
-//
+
 //    public Team getTeam() {
 //        return team;
 //    }
@@ -95,5 +115,21 @@ public class Member{
 
     public void setHomeAddress(Address homeAddress) {
         this.homeAddress = homeAddress;
+    }
+
+    public Set<String> getFavoriteFoods() {
+        return favoriteFoods;
+    }
+
+    public void setFavoriteFoods(Set<String> favoriteFoods) {
+        this.favoriteFoods = favoriteFoods;
+    }
+
+    public List<AddressEntity> getAddressHistory() {
+        return addressHistory;
+    }
+
+    public void setAddressHistory(List<AddressEntity> addressHistory) {
+        this.addressHistory = addressHistory;
     }
 }
