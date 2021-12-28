@@ -17,21 +17,28 @@ public class JpaMain {
         EntityTransaction tx = em.getTransaction();
         tx.begin();
         try {
+            Member member = new Member();
+            member.setUsername("hello");
+            member.setHomeAddress(new Address("city","street","10"));
+            member.setWorkPeriod(new Period());
+
+            em.persist(member);
+
 //          ------------------------------------------------------------------
 //          -cascade- 소유자가 1개일 경우에만 사용
-            Child child1 = new Child();
-            Child child2 = new Child();
-            Parent parent = new Parent();
-            parent.addChild(child1);
-            parent.addChild(child2);
-            em.persist(parent);
-            em.flush();
-            em.clear();
+//            Child child1 = new Child();
+//            Child child2 = new Child();
+//            Parent parent = new Parent();
+//            parent.addChild(child1);
+//            parent.addChild(child2);
+//            em.persist(parent);
+//            em.flush();
+//            em.clear();
 //          고아 객체 - 참조하는 곳이 하나일 때 사용해야함, 특정 엔티티가 개인 소유할 때 사용
 //          oorphanRemoval = true 사용
-            Parent findParent = em.find(Parent.class, parent.getId());
+//            Parent findParent = em.find(Parent.class, parent.getId());
 //            em.remove(findParent);
-            findParent.getChildList().remove(0);
+//            findParent.getChildList().remove(0);
 //            em.persist(child1);
 //            em.persist(child2);
 //          -----------------------------------------------------------------

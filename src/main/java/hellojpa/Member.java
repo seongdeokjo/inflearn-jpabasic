@@ -1,9 +1,6 @@
 package hellojpa;
 
 import javax.persistence.*;
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.List;
 
 
 //2. seq 사용 ->
@@ -12,7 +9,8 @@ import java.util.List;
 
 //3. table seq 사용 ->@TableGenerator(name = "MEMBER_SEQ_GENERATOR",table = "MY_SEQUENCES",pkColumnValue = "MEMBER_SEQ",allocationSize = 1)
 @Entity
-public class Member extends BaseEntity{
+//public class Member extends BaseEntity{
+public class Member{
 //  1. @GeneratedValue(strategy = GenerationType.IDENTITY)
 //  2. @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "member_seq_generator")
 //  3. @GeneratedValue(strategy = GenerationType.TABLE,generator = "MEMBER_SEQ_GENERATOR")
@@ -24,10 +22,28 @@ public class Member extends BaseEntity{
     @Column(name = "USERNAME")
     private String username;
 
-//  @ManyToOne(fetch = FetchType.LAZY)  // 지연로딩 - 프록시 객체를 사용해 조회
-    @ManyToOne(fetch = FetchType.EAGER) // 즉시로딩 -
-    @JoinColumn(name = "TEAM_ID")
-    private Team team;
+    // 기간 period
+    @Embedded
+   private Period workPeriod;
+
+    // 주소
+    @Embedded
+    private Address homeAddress;
+
+    // 주소
+    @Embedded
+    @AttributeOverrides({
+            @AttributeOverride(name = "city", column = @Column(name = "WORK_CITY")),
+            @AttributeOverride(name = "street", column = @Column(name = "WORK_STREET")),
+            @AttributeOverride(name = "zipcode", column = @Column(name = "WORK_ZIPCODE"))
+    })
+    private Address workAddress;
+
+
+////  @ManyToOne(fetch = FetchType.LAZY)  // 지연로딩 - 프록시 객체를 사용해 조회
+//    @ManyToOne(fetch = FetchType.EAGER) // 즉시로딩 -
+//    @JoinColumn(name = "TEAM_ID")
+//    private Team team;
 
 //    @OneToOne
 //    @JoinColumn(name = "LOCKER_ID")
@@ -40,14 +56,14 @@ public class Member extends BaseEntity{
 //    @OneToMany(mappedBy = "member")
 //    private List<MemberProduct> memberProducts = new ArrayList<>();
 
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
+//    public Long getId() {
+//        return id;
+//    }
+//
+//    public void setId(Long id) {
+//        this.id = id;
+//    }
+//
     public String getUsername() {
         return username;
     }
@@ -55,13 +71,29 @@ public class Member extends BaseEntity{
     public void setUsername(String username) {
         this.username = username;
     }
+//
+//    public Team getTeam() {
+//        return team;
+//    }
+//
+//    public void setTeam(Team team) {
+//        this.team = team;
+//        team.getMembers().add(this);
+//    }
 
-    public Team getTeam() {
-        return team;
+    public Period getWorkPeriod() {
+        return workPeriod;
     }
 
-    public void setTeam(Team team) {
-        this.team = team;
-        team.getMembers().add(this);
+    public void setWorkPeriod(Period workPeriod) {
+        this.workPeriod = workPeriod;
+    }
+
+    public Address getHomeAddress() {
+        return homeAddress;
+    }
+
+    public void setHomeAddress(Address homeAddress) {
+        this.homeAddress = homeAddress;
     }
 }
