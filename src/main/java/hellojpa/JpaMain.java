@@ -2,10 +2,10 @@ package hellojpa;
 
 import org.hibernate.Hibernate;
 
-import javax.persistence.EntityManager;
-import javax.persistence.EntityManagerFactory;
-import javax.persistence.EntityTransaction;
-import javax.persistence.Persistence;
+import javax.persistence.*;
+import javax.persistence.criteria.CriteriaBuilder;
+import javax.persistence.criteria.CriteriaQuery;
+import javax.persistence.criteria.Root;
 import java.time.LocalDateTime;
 import java.util.Collections;
 import java.util.List;
@@ -19,20 +19,48 @@ public class JpaMain {
         EntityTransaction tx = em.getTransaction();
         tx.begin();
         try {
+//           -------------------------------------------------------------------------------
+            // native sql - jpa가 제공하는 sql을 직접 사용하는 기능, jpql로 해결할 수 없는 특정 데이터베스에 의존적인 기능
+            //            - 예) 오라클 connect by, 특정 db만 사용하는 sql 힌트
+//            em.createNativeQuery("select MEMBER_ID, city, street, zipcode, USERNAME from MEMBER")
+//                    .getResultList();
+//           -------------------------------------------------------------------------------
+            // criteria 사용 준비   - 문자가 아닌 자바코드로 jpql을 작성할 수 있다. / jpql 빌더 역활 / jpa 공식 기능
+            // 단점 - 너무 복잡하고 실용성이 없다. -> criteria 대신 queryDsl 사용 권장
+//            CriteriaBuilder cb = em.getCriteriaBuilder();
+//            CriteriaQuery<Member> query = cb.createQuery(Member.class);
+//            Root<Member> m = query.from(Member.class);
+//            CriteriaQuery<Member> cq = query.select(m);
+//            String username = "dada";
+//            if(username != null){
+//                cq = cq.where(cb.equal(m.get("username"), "kim"));
+//            }
+//            List<Member> resultList = em.createQuery(cq).getResultList();
+//           --------------------------------------------------------------------------------
+            // jpql 문법 - 테이블이 아닌 객체를 대상으로 검색하는 객체 지향 쿼리
+            //          - sql을 추상화해서 특정 데이터베이스 sql에 의존x
+            //          - jpql -> 객체 지향 sql
+//            List<Member> result = em.createQuery(
+//                    "select m from Member m where m.username like '%kim%'",
+//                    Member.class
+//            ).getResultList();
+//            for (Member member : result) {
+//                System.out.println("member = " + member);
+//            }
 //          ---------------------------------------------------------------------------------
-            Member member = new Member();
-            member.setUsername("member1");
-            member.setHomeAddress(new Address("homeCity","street","10"));
-            member.getFavoriteFoods().add("치킨");
-            member.getFavoriteFoods().add("피자");
-            member.getFavoriteFoods().add("족발");
-            member.getAddressHistory().add(new AddressEntity("old1","street","20"));
-            member.getAddressHistory().add(new AddressEntity("old2", "street", "20"));
-            em.persist(member);
-            em.flush();
-            em.clear();
-            System.out.println("========start========");
-            Member findMember = em.find(Member.class, member.getId());
+//            Member member = new Member();
+//            member.setUsername("member1");
+//            member.setHomeAddress(new Address("homeCity","street","10"));
+//            member.getFavoriteFoods().add("치킨");
+//            member.getFavoriteFoods().add("피자");
+//            member.getFavoriteFoods().add("족발");
+//            member.getAddressHistory().add(new AddressEntity("old1","street","20"));
+//            member.getAddressHistory().add(new AddressEntity("old2", "street", "20"));
+//            em.persist(member);
+//            em.flush();
+//            em.clear();
+//            System.out.println("========start========");
+//            Member findMember = em.find(Member.class, member.getId());
 //          수정
             // homeCity -> newCity
 //            findMember.getHomeAddress().setCity("newCity");
